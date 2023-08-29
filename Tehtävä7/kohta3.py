@@ -39,8 +39,11 @@ while True:
         lisaa_LON = input("Kentän LON: ")
         lisaa_TZ = input("Kentän TZ: ")
         lisaa_LID = input("Kentän LID: ")
-        lisaa_l = [lisaa_ICAO, lisaa_IATA, lisaa_NAME, lisaa_CITY, lisaa_SUBD, lisaa_COUNTRY, lisaa_ELEVATION, lisaa_LAT, lisaa_LON, lisaa_TZ, lisaa_LID]
-        kirjoita(lisaa_l)
+        if lisaa_IATA in etsi_t(lisaa_IATA):
+            print(punainen(lisaa_ICAO),"tiedot on jo syötetty.\n",etsi_t(lisaa_ICAO))
+        else:
+                lisaa_l = [lisaa_ICAO, lisaa_IATA, lisaa_NAME, lisaa_CITY, lisaa_SUBD, lisaa_COUNTRY, lisaa_ELEVATION, lisaa_LAT, lisaa_LON, lisaa_TZ, lisaa_LID]
+                kirjoita(lisaa_l)
     elif syote == "etsi":
         etsi_s = input("Syötä lentokentän ICAO koodi etsiäksesi tietoa kentästä: ")
         print(etsi_t(etsi_s))
