@@ -7,7 +7,7 @@ pizza_h2 = float(input("Syötä pizzan2 halkaisija senttimetreinä: "))
 pizza_e2 = float(input("Syötä pizzan2 hinta euroina: "))
 
 def pizzuri(halkaisija,eurot):
-    a = math.pi * halkaisija *halkaisija
+    a = math.pi * (halkaisija / 2) ** 2
     b = a / eurot
     return b
 
