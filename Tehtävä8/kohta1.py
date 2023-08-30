@@ -28,5 +28,5 @@ while True:
     if icao == "":
         print("Lopetetaan")
         break
-else:
-    haelentokenttaicao(icao)
+    else:
+        haelentokenttaicao(icao)
