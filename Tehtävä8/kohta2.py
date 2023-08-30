@@ -23,7 +23,7 @@ yhteys = mysql.connector.connect(
     )
 
 while True:
-    maakoodi = input("Anna lentokentän ICAO paina Enter lopettaaksesi: ")
+    maakoodi = input("Anna maakoodi. paina Enter lopettaaksesi: ")
     if maakoodi == "":
         print("Lopetetaan")
         break
