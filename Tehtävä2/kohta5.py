@@ -9,4 +9,5 @@ kilo = int(paino / 1000)
 gramma = paino % 1000
 grammaval = round(gramma, 2)
 
+print("Massa nykymittojen mukaan:")
 print(str(kilo) + "kg", "ja", str(grammaval) + "grammaa")
