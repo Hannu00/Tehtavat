@@ -1,3 +1,4 @@
+print("Hytti vaihtoehdot: LUX, A, B, C")
 hytti = input("Syötä hyttiluokkasi: ")
 
 LUX_hytti = "LUX on parvekkeellinen hytti yläkannella."
