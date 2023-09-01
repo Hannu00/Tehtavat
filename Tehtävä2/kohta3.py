@@ -1,8 +1,7 @@
-Kanta = float(input("Kanta:"))
-Korkeus = float(input("Korkeus:"))
+Kanta = float(input("Kanta: "))
+Korkeus = float(input("Korkeus: "))
 
-Piiri= (Kanta * 2) + (Korkeus * 2)
-Pinta = Kanta * Korkeus
-float(Pinta)
-float(Piiri)
+Piiri= float((Kanta * 2) + (Korkeus * 2))
+Pinta = float(Kanta * Korkeus)
+
 print("Suorakulmion piiri olisi:",Piiri, "Ja pinta-ala:",Pinta)
