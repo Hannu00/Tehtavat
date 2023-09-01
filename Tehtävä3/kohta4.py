@@ -1,8 +1,15 @@
 vuosi = int(input("Syötä vuosi: "))
+epa = str("Vuosi ei ole karkausvuosi.")
+tosi = str("Vuosi on karkausvuosi.")
 
 if vuosi % 4 == 0:
-    print("Vuosi on karkausvuosi.")
-elif vuosi % 100 == 0 and vuosi % 400 == 0:
-    print("Vuosi on karkausvuosi.")
+    if vuosi % 100 == 0:
+        if vuosi % 400 == 0:
+            print(tosi)
+        else:
+            print(epa)
+    else:
+        print(tosi)
+
 else:
-    print("Vuosi ei ole karkausvuosi.")
+    print(epa)
