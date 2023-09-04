@@ -40,6 +40,7 @@ class Kilpailu:
         self.pituus = pituus
         self.osallistujat = osallistujat
 
+
     def tunti_kuluu(self):
         for auto in autot:
             auto.kulje(1)
@@ -48,7 +49,10 @@ class Kilpailu:
     def tulosta_tilanne(self):
         autot_maali = []
         for auto in autot:
-            autot_maali.append([auto.rekisteritunnus, auto.huippunopeus, auto.nopeus, auto.matka])
+            tulostus_huippu = str(auto.huippunopeus) + "km/h"
+            tulostus_nopeus = str(auto.nopeus) + "kmh/h"
+            tulostus_matka = str(auto.matka) + "km"
+            autot_maali.append([auto.rekisteritunnus, str(tulostus_huippu), str(tulostus_nopeus), tulostus_matka])
 
         autot_maali.sort(reverse=True, key=lajittelu)
         print(tabulate(autot_maali, headers=["Rekisteritunnus", "Huippunopeus km/h", "Nopeus km/h", "Matka km"],
