@@ -1,16 +1,17 @@
 import mysql.connector
+from tabulate import tabulate
 
 
-def haelentokenttaicao(icao):
+def haelentokenttaicao(icao_koodi):
     sql = "SELECT name, municipality FROM airport"
-    sql += " WHERE ident='" + icao + "'"
+    sql += " WHERE ident='" + icao_koodi + "'"
     print(sql)
     kursori = yhteys.cursor()
     kursori.execute(sql)
     tulos = kursori.fetchall()
-    if kursori.rowcount >0 :
+    if kursori.rowcount >0:
         for rivi in tulos:
-            print(tulos)
+            print(tabulate(tulos,headers=["Lentokentän nimi", "Kunta"], tablefmt="fancy_grid"))
     return
 
 
@@ -18,15 +19,15 @@ yhteys = mysql.connector.connect(
     host="localhost",
     port=3306,
     database="flight_game",
-    user="python",
-    password="salasana",
+    user=input("Syötä käyttäjätunnus: "),
+    password=input("Syötä salasana: "),
     autocommit=True
     )
+icao = 0
 
-while True:
+while icao != "":
     icao = input("Anna lentokentän ICAO paina Enter lopettaaksesi: ")
     if icao == "":
         print("Lopetetaan")
-        break
     else:
         haelentokenttaicao(icao)

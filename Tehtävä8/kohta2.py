@@ -1,15 +1,15 @@
 import mysql.connector
-
+from tabulate import tabulate
 
 def haelentokenttaicao(maakoodi):
-    sql = "SELECT type as 'Kentän tyyppi',count(*) as 'lkm' FROM airport"
+    sql = "SELECT type, count(*) FROM airport"
     sql += " WHERE iso_country='" + maakoodi + "'"
     sql += " GROUP BY type"
     print(sql)
     kursori = yhteys.cursor()
     kursori.execute(sql)
     tulos = kursori.fetchall()
-    print(tulos)
+    print(tabulate(tulos, tablefmt="fancy_grid"))
     return
 
 
@@ -17,8 +17,8 @@ yhteys = mysql.connector.connect(
     host="localhost",
     port=3306,
     database="flight_game",
-    user="python",
-    password="salasana",
+    user="root",
+    password="root",
     autocommit=True
     )
 
