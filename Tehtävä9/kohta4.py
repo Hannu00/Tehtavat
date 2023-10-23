@@ -13,13 +13,13 @@ class Auto:
 
     tehty = 0
 
-    def __init__(self, rekisteritunnus, huippunopeus, nopeus=0, matka=0):
+    def __init__(self, rekisteritunnus, huippunopeus):
         self.kmh = None
         self.h = None
         self.rekisteritunnus = rekisteritunnus
         self.huippunopeus = huippunopeus
-        self.nopeus = nopeus
-        self.matka = matka
+        self.nopeus = 0
+        self.matka = 0
         Auto.tehty = Auto.tehty + 1
 
     def kiihdyta(self, kmh):
