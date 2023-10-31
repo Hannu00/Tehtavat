@@ -1,95 +1,138 @@
-.Logo {
-    max-width: 100px;
-    max-height: 100px;
-    justify-content: flex-start;
-}
-
-body {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0;
-    height: 100%;
-    overflow: auto;
-}
-
-.header-menu,
-footer {
-    display: flex;
-    align-items: center;
-    width: 100%;
-}
-
-.header-menu {
-    justify-content: space-between;
-    height: 60px;
-    background: #000000;
-    color: #ffffff;
-    position: fixed;
-}
-
-nav {
-    justify-content: space-between;
-}
-
-ul {
-    list-style-type: none;
+/* Reset some default styles */
+body, h1, h2, h3, p, ul, li {
     margin: 0;
     padding: 0;
-    overflow: hidden;
-    background-color: #1f1f1f;
 }
 
-li {
-    float: left;
+/* Apply a background color to the body */
+body {
+    background: rgb(18, 26, 12);
+    font-family: Arial, sans-serif;
+
 }
 
-li a {
-    display: block;
-    color: #00d4ff;
-    text-align: center;
-    padding: 14px 16px;
+/* Style the header menu */
+.header-menu {
+    background-color: #16210f;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 10px 0 10px rgba(0, 0, 0, 0.3), 10px 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Style the company logo */
+.Logo {
+    max-width: 100px;
+    height: auto;
+}
+
+/* Style the navigation menu */
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
     text-decoration: none;
+    color: #fff;
 }
 
-li a:hover {
-    background-color: #111;
-}
-
-h2 {
-    margin: 0 0 8px;
-    font-size: 60px;
-    text-align: center;
-    padding-top: 100px;
-    color: black;
-}
-
-ul li {
-    display: inline-block;
-    padding: 0 10px;
-    list-style: none;
-}
-
-section {
-    flex: 1;
-}
-
+/* Style the home article */
 .home {
-    min-height: 100vh;
-    min-width: 100vh;
-    color: #00d4ff;
-}
-
-html {
-    background: rgb(2, 0, 36);
-    background: linear-gradient(0deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
-    overflow: hidden;
-    font-family: 'Arial', 'Helvetica', sans-serif;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    max-width: 90%;
 }
 
 #apina {
-    display: block;
+    width: 90%;
+    margin: auto;
+    max-height: 400px;
+}
+
+
+.home header h2 {
+    margin-top: 5%;
+    font-size: xxx-large;
+    margin-bottom: 10px;
+}
+
+
+.home p {
+    font-size: 16px;
+    line-height: 1.5;
+    width: 80%;
+    margin: auto;
+    color: white;
+}
+
+
+@media (max-width: 768px) {
+    .header-menu {
+        flex-direction: column;
+        text-align: center;
+        box-shadow: -19px 0 10px rgba(0, 0, 0, 0.3), 10px 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .header-menu nav {
+        margin-top: 20px;
+    }
+
+    nav ul li {
+        margin-right: 0;
+        margin-bottom: 10px;
+        display: block;
+    }
+}
+html {
+    background-color: #121a0c;
+}
+
+.sivu-rajaus {
     margin: 0 auto;
-    width: 50%;
-    align-self: center;
-    border: 7px solid black;
+    max-width: 1200px;
+    background: rgb(2,0,36);
+    background: linear-gradient(0deg, rgb(18, 26, 12) 0%, rgb(21, 51, 12) 32%, rgb(30, 73, 18) 100%);
+    box-shadow: -19px 0 10px rgba(0, 0, 0, 0.3), 10px 0 10px rgba(0, 0, 0, 0.3);
+    padding: 0;
+    height: 100vh;
+}
+
+#products {
+    margin: auto;
+    padding: 0;
+    max-width: 90%;
+    text-align: center;
+}
+
+#mainos {
+    padding: 0;
+    width: 100%;
+    height: 200px;
+
+}
+
+.sivu-rajaus p {
+    text-align: left;
+
+}
+
+.tuote {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: left;
+    font-family: arial;
+    background-color: #1e4912;
+}
+
+.tuote img {
+    width: 100%;
 }

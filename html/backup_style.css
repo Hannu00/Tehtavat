@@ -1,0 +1,105 @@
+.Logo {
+    max-width: 100%;
+    max-height: 100%;
+    justify-content: flex-start;
+}
+
+body {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    height: 100%;
+    overflow: auto;
+}
+
+.header-menu,
+footer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.header-menu {
+    justify-content: space-between;
+    height: 50px;
+    background: #000000;
+    color: #ffffff;
+    position: fixed;
+}
+
+nav {
+    justify-content: space-between;
+}
+
+ul {
+    list-style-type: none;
+    margin: auto;
+    padding: 0;
+    overflow: hidden;
+    background-color: #1f1f1f;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: #00d4ff;
+    text-align: center;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+
+h2 {
+    margin: 0 0 8px;
+    font-size: 60px;
+    text-align: center;
+    padding-top: 100px;
+    color: black;
+}
+
+ul li {
+    display: inline-block;
+    padding: 15px 10px;
+    list-style: none;
+    height: 20px;
+
+}
+
+.home {
+    min-height: 100vh;
+    min-width: 100vh;
+    color: #00d4ff;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 80%;
+
+}
+
+html {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(0deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+    overflow: hidden;
+    font-family: 'Arial', 'Helvetica', sans-serif;
+}
+
+#apina {
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    width: 50%;
+
+    border: 7px solid black;
+}
+
+article p {
+    width: 40%;
+    text-align: left;
+    align-self: center;
+    margin-right: auto;
+    margin-left: auto;
+}
