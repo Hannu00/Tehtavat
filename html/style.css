@@ -1,0 +1,95 @@
+.Logo {
+    max-width: 100px;
+    max-height: 100px;
+    justify-content: flex-start;
+}
+
+body {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    height: 100%;
+    overflow: auto;
+}
+
+.header-menu,
+footer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.header-menu {
+    justify-content: space-between;
+    height: 60px;
+    background: #000000;
+    color: #ffffff;
+    position: fixed;
+}
+
+nav {
+    justify-content: space-between;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #1f1f1f;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: #00d4ff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+
+h2 {
+    margin: 0 0 8px;
+    font-size: 60px;
+    text-align: center;
+    padding-top: 100px;
+    color: black;
+}
+
+ul li {
+    display: inline-block;
+    padding: 0 10px;
+    list-style: none;
+}
+
+section {
+    flex: 1;
+}
+
+.home {
+    min-height: 100vh;
+    min-width: 100vh;
+    color: #00d4ff;
+}
+
+html {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(0deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+    overflow: hidden;
+    font-family: 'Arial', 'Helvetica', sans-serif;
+}
+
+#apina {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+    align-self: center;
+    border: 7px solid black;
+}
