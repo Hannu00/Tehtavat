@@ -6,14 +6,14 @@ body, h1, h2, h3, p, ul, li {
 
 /* Apply a background color to the body */
 body {
-    background: rgb(18, 26, 12);
+    background: rgb(25, 116, 126);
     font-family: Arial, sans-serif;
 
 }
 
 /* Style the header menu */
 .header-menu {
-    background-color: #16210f;
+    background-color: #19747e;
     color: #fff;
     padding: 10px;
     display: flex;
@@ -46,7 +46,7 @@ nav a {
 /* Style the home article */
 .home {
     margin: auto;
-    padding: 20px;
+    padding: 100px;
     text-align: center;
     max-width: 90%;
 }
@@ -92,14 +92,14 @@ nav a {
     }
 }
 html {
-    background-color: #121a0c;
+    background-color: #19747e;
 }
 
 .sivu-rajaus {
     margin: 0 auto;
     max-width: 1200px;
     background: rgb(2,0,36);
-    background: linear-gradient(0deg, rgb(18, 26, 12) 0%, rgb(21, 51, 12) 32%, rgb(30, 73, 18) 100%);
+    background: linear-gradient(0deg, rgb(25, 116, 126) 0%, rgb(169, 214, 229) 32%, rgb(209, 232, 226) 100%);
     box-shadow: -19px 0 10px rgba(0, 0, 0, 0.3), 10px 0 10px rgba(0, 0, 0, 0.3);
     padding: 0;
     height: 100vh;
@@ -120,19 +120,46 @@ html {
 }
 
 .sivu-rajaus p {
-    text-align: left;
+
 
 }
 
 .tuote {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 300px;
-    margin: auto;
     text-align: left;
-    font-family: arial;
-    background-color: #1e4912;
+    font-family: arial, sans-serif;
+    background-color: #d1e8e2;
+    display: inline-block;
+    padding: 5px;
 }
 
 .tuote img {
-    width: 100%;
+    display: block;
+    height: 300px;
+    margin: auto;
+    transform: rotateY(0deg) rotate(-45deg);
+}
+
+.tuote p {
+    padding-top: 5px;
+}
+
+.tuotteet {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.contacts {
+    display: inline-block;
+}
+
+#kartta {
+    width: 600px;
+    height: 400px;
+
+}
+
+#products p {
+    text-align: left;
 }
