@@ -45,7 +45,7 @@ nav a {
 
 .home {
     margin: auto;
-    padding: 100px;
+    padding: 20px;
     text-align: center;
     max-width: 90%;
 }
@@ -101,7 +101,8 @@ html {
     background: linear-gradient(0deg, rgb(25, 116, 126) 0%, rgb(169, 214, 229) 32%, rgb(209, 232, 226) 100%);
     box-shadow: -19px 0 10px rgba(0, 0, 0, 0.3), 10px 0 10px rgba(0, 0, 0, 0.3);
     padding: 0;
-    height: 100vh;
+    height: 120vh;
+    overflow: hidden;
 }
 
 #products {
