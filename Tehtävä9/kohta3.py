@@ -10,7 +10,6 @@ def nopeus_f(nopeus):
 class Auto:
     def __init__(self, rekisteritunnus, huippunopeus, nopeus=0, matka=0):
         self.kmh = None
-        self.h = None
         self.rekisteritunnus = rekisteritunnus
         self.huippunopeus = huippunopeus
         self.nopeus = nopeus
@@ -25,7 +24,6 @@ class Auto:
             self.nopeus = 0
 
     def kulje(self, h):
-        self.h = h
         self.matka = self.nopeus * h
 
 

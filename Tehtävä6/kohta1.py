@@ -6,11 +6,3 @@ luku = int()
 while luku != 6:
     luku = noppa()
     print(luku)
-
-
-
-
-
-
-
-

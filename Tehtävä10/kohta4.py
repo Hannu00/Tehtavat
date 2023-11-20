@@ -40,7 +40,6 @@ class Kilpailu:
         self.pituus = pituus
         self.osallistujat = osallistujat
 
-
     def tunti_kuluu(self):
         for auto in autot:
             auto.kulje(1)

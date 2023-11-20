@@ -1,9 +1,8 @@
 nimet = set()
+nimi = "asd"
 
-while True:
+while nimi != "":
     nimi = str(input("Syötä nimi. paina Enter lopettaaksesi: "))
-    if nimi == "":
-        break
 
     if nimi in nimet:
         print("Aiemmin syötetty nimi")

@@ -1,7 +1,7 @@
-Alkuluku = True
+Alkuluku = "Tosi"
 a = int(input("Syötä luku: "))
-for i in range (2,a):
+for i in range(2, a):
     if a % i == 0:
-        Alkuluku = False
+        Alkuluku = "Epätosi"
         break
-print(str(a),"on alkuluku:",str(Alkuluku))
+print(str(a), "on alkuluku:", str(Alkuluku))

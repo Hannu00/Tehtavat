@@ -10,6 +10,5 @@ if vuosi % 4 == 0:
             print(epa)
     else:
         print(tosi)
-
 else:
     print(epa)

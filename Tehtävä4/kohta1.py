@@ -5,4 +5,4 @@ luku = min
 while luku <= max:
     if luku % 3 == 0 and luku != 0:
         print(luku)
-    luku = luku + 1
+    luku = luku + 3

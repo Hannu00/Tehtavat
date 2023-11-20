@@ -34,6 +34,7 @@ class Lehti(Julkaisu):
 # Luo pääohjelmassa julkaisut Aku Ankka (päätoimittaja Aki Hyyppä) ja Hytti n:o 6 (kirjailija Rosa Liksom, 200 sivua).
 # Tulosta molempien julkaisujen kaikki tiedot toteuttamiesi metodien avulla.
 
+
 lehti1 = Lehti("Aku Ankka", "Aki Hyyppä")
 kirja1 = Kirja("Hytti n:o 6", "Rosa Liksom", 200)
 lehti1.tulosta_tiedot()

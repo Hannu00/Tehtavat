@@ -2,9 +2,6 @@ from random import randint
 from tabulate import tabulate
 
 
-#def nopeus_f(nopeus):
-    #return f"{nopeus}km/h"
-
 def lajittelu(x):
     return x[3]
 
@@ -45,14 +42,13 @@ maali = False
 while not maali:
     for auto in autot:
         if auto.matka >= 10000:
-            voittaja = auto.rekisteritunnus
             print(f"Kisa päättyi voittaja auton rekisteritunnus on {auto.rekisteritunnus}.")
             maali = True
             break
     if not maali:
         for auto in autot:
             auto.kulje(1)
-            auto.kiihdyta(randint(-10, 10))
+            auto.kiihdyta(randint(-10, 15))
 
 autot_maali = []
 for auto in autot:

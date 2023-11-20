@@ -2,15 +2,38 @@ import mysql.connector
 from tabulate import tabulate
 from geopy.distance import geodesic
 import os
+import time
 
+lentokone1 = '''
+     __|__
+--o--(_)--o--
+'''
+lentokone2 = '''
+    __|__
+ --o--(_)--o--
+'''
+
+icao = "a"
+icaot_syotetty = []
 # Yhdistetään tietokantaan
 def yhdista_tietokantaan():
     return mysql.connector.connect(
-        host="asd",
-        user="asd",
-        password="asd",
-        database="asd"
+        host="54.37.204.19",
+        user="u106905_7AsIM13PeT",
+        password="!.f05FLEFDQ=lu5uhjUx@Gb4",
+        database="s106905_lentomopo"
     )
+conn = yhdista_tietokantaan()
+def siirtyminen(icao):
+    os.system('cls')
+    icaot_syotetty.append(icao)
+    print(lentokone1)
+    time.sleep(0.5)
+    print(lentokone2)
+    time.sleep(0.5)
+    print(lentokone1)
+    time.sleep(0.5)
+    tee_lentokenttahaku(icao, conn)
 
 # Hae ICAO-koordinaatit
 def hae_icao_koordinaatit(icao, conn):
@@ -33,13 +56,13 @@ def tee_lentokenttahaku(icao, conn):
         query = (
             "SELECT a.ident, a.name, a.latitude_deg, a.longitude_deg, a.type, "
             "SQRT(POW(a.latitude_deg - %s, 2) + POW(a.longitude_deg - %s, 2)) AS etaisyys, "
-            "country.name AS Maa "
+            "c.name AS Maa "
             "FROM airport as a "
-            "JOIN country ON a.iso_country = country.iso_country "
-            "WHERE a.ident != %s "
-            "GROUP BY country.name "
+            "JOIN country AS c ON a.iso_country = c.iso_country "
+            "WHERE a.ident != %s AND a.type != 'small_airport'"
+            "GROUP BY c.name "
             "ORDER BY etaisyys "
-            "LIMIT 3"  # TÄTÄ muuttamalla saadaan enemmän tuloksia = voidaan näyttää kauempana olevia
+            "LIMIT 6"  # TÄTÄ muuttamalla saadaan enemmän tuloksia = voidaan näyttää kauempana olevia
         )
         cursor.execute(query, (lahtokohta_latitude, lahtokohta_longitude, icao))
 
@@ -59,28 +82,30 @@ def tee_lentokenttahaku(icao, conn):
         kaikki_lentokentat.sort(key=lambda x: float(x["etaisyys_km"]))
 
         # Valitaan 3 kauimpana olevaa lentokenttää
-        kauimpana_olevat_lentokentat = kaikki_lentokentat[-3:]
+        pienin = min(kaikki_lentokentat, key=lambda x: x["etaisyys_km"])
+        keski = kaikki_lentokentat[len(kaikki_lentokentat) // 2]
+        suurin = max(kaikki_lentokentat, key=lambda x: x["etaisyys_km"])
+
 
         # Tulostetaan tulokset tabulaten avulla, mutta ei oteta mukaan "etaisyys", "latitude_deg", ja "longitude_deg"
         headers_to_exclude = ["etaisyys", "latitude_deg", "longitude_deg"]
         filtered_kauimpana_olevat_lentokentat = [
             {key: lentokentta[key] for key in lentokentta if key not in headers_to_exclude}
-            for lentokentta in kauimpana_olevat_lentokentat
+            for lentokentta in [pienin, suurin, keski]
         ]
 
         headers = "keys"
         tablefmt = "fancy_grid"
-        os.system("cls")
         print(tabulate(filtered_kauimpana_olevat_lentokentat, headers=headers, tablefmt=tablefmt, floatfmt=".2f"))
 
     else:
-        os.system("cls")
         print(f"Lähtökohtaa '{icao}' ei löytynyt.")
 
 def main():
     conn = yhdista_tietokantaan()
-
-    while True:
+    icao = "a"
+    icaot_syotetty = []
+    while icao != "Q":
         icao = input("Syötä aloitus ICAO, syötä 'q' lopettaaksesi: ")
         icao = icao.upper()
 
@@ -88,7 +113,13 @@ def main():
             print("Lopetetaan.")
             break
 
-        tee_lentokenttahaku(icao, conn)
+        elif icao in icaot_syotetty:
+            print("Olet käynyt jo syöttämälläsi lentokentällä")
+            time.sleep(1)
+
+        else:
+            siirtyminen(icao)
+
 
     # Suljetaan tietokantayhteys
     conn.close()
